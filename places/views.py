@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from places.models import Place
 
-# Create your views here.
+
+def index(request):
+    print(len(Place.objects.all()))
+    return render(
+        request, "index.html", context={'places': Place.objects.all()})

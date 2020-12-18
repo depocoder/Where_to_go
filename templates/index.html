@@ -50,12 +50,25 @@
               "coordinates": [{{place.lat}}, {{place.lon}}]
             },
             "properties": {
-              "title": place.title,
-              "placeId": "place.id",
-              "detailsUrl": "{% static 'places/moscow_legends.json' %}"
+              "title": "{{place.title}}",
+              "placeId": "{{place.id}}",
+              "detailsUrl": {
+                'title': "{{place.title}}",
+                'imgs':
+                  [{% for image in place.place_image.all %}
+                    "{{image.image.url}}",
+                  {% endfor %}],
+                "description_short": "{{place.description_short}}",
+                "description_long": "{{place.description_long}}",
+                'coordinates':{
+                  "lat": {{place.lat}},
+                  "lng": {{place.lon}}
+                }
+                
+              }
             }
           },
-          {% endfor %}
+        {% endfor %}
       ]
     }
   </script>

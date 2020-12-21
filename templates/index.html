@@ -52,22 +52,13 @@
             "properties": {
               "title": "{{place.title}}",
               "placeId": "{{place.id}}",
-              "detailsUrl": {
-                'title': "{{place.title}}",
-                'imgs':
-                  [{% for image in place.place_image.all %}
-                    "{{image.image.url}}",
-                  {% endfor %}],
-                "description_short": "{{place.description_short}}",
-                "description_long": "{{place.description_long}}",
-                'coordinates':{
-                  "lat": {{place.lat}},
-                  "lng": {{place.lon}}
-                }
-                
-              }
+              "detailsUrl": "static/places/{{place.id}}.json"
             }
+        {% if places.last == place %}
+          }
+        {% else %}
           },
+        {% endif %}
         {% endfor %}
       ]
     }

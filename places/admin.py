@@ -2,13 +2,14 @@ from django.contrib import admin
 from places.models import Place, Image
 
 
+class ImagePlace(admin.TabularInline):
+    model = Image
+
+
 class AdminPlace(admin.ModelAdmin):
-    pass
-
-
-class ImagePlace(admin.ModelAdmin):
-    pass
+    inlines = [
+        ImagePlace,
+    ]
 
 
 admin.site.register(Place, AdminPlace)
-admin.site.register(Image, ImagePlace)

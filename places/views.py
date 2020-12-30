@@ -22,7 +22,7 @@ def show_place(request, place_id):
         "description_long": requested_place.description_long,
         'coordinates': {
           "lat": requested_place.lat,
-          "lon": requested_place.lon
+          "lng": requested_place.lon
         }
     }
     return JsonResponse(place)

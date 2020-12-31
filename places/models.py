@@ -29,7 +29,7 @@ class Image(models.Model):
 
 
     class Meta(object):
-        ordering = ['position']
+        ordering = ('position',)
     
 
     def __str__(self):

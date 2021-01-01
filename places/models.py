@@ -24,14 +24,12 @@ class Image(models.Model):
     def image_preview(self):
         if self.image:
             return mark_safe('<img src="{url}" width="300" height="300" style="object-fit: cover;">'.format(
-                url = self.image.url,
+                url=self.image.url,
                 ))
         return ""
 
-
     class Meta(object):
         ordering = ('position',)
-    
 
     def __str__(self):
         return f'{self.id} {self.place.title}'

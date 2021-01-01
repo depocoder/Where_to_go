@@ -3,4 +3,4 @@ python-dotenv==0.14.0
 Pillow==8.0.0
 django-admin-sortable2==0.7.7
 django-tinymce==3.2.0
-adminsortable2
+requests==2.25.1

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'places.apps.PlacesConfig',
     'adminsortable2',
     'tinymce',
+    'where_to_go'
 ]
 
 MIDDLEWARE = [

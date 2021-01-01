@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from places.models import Place
 from django.http import HttpResponseNotFound, JsonResponse
-from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned 
-from pprint import pprint
+from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
+
 
 def index(request):
     return render(

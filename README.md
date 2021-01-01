@@ -1,7 +1,9 @@
 # Where_to_go
 
-Этот проект показывает интересные места по миру с помощью яндекс афиши, основан на этом [js-коде](https://github.com/devmanorg/where-to-go-frontend).     
+Этот проект показывает интересные места по миру с помощью яндекс афиши, основан на этом [js коде](https://github.com/devmanorg/where-to-go-frontend).     
+      
 [Ссылка на сайт](https://herypank.pythonanywhere.com/).  Места добавляются через [django-admin](https://herypank.pythonanywhere.com/admin).     
+      
 ![](https://i.imgur.com/x3nt2d6.jpg)      
       
 ## Подготовка к запуску.    

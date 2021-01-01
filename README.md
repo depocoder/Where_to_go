@@ -1,8 +1,9 @@
 # Where_to_go
 
-Этот проект показывает интересные места по миру, основан на этом [js-коде](https://github.com/devmanorg/where-to-go-frontend). Подключена админка django.  
-    
-## Подготовка к запуску.  
+Этот проект показывает интересные места по миру с помощью яндекс афиши, основан на этом [js-коде](https://github.com/devmanorg/where-to-go-frontend). [Ссылка на сайт](https://herypank.pythonanywhere.com/).  Места добавляются через [django-admin](https://herypank.pythonanywhere.com/admin).     
+![](https://i.imgur.com/x3nt2d6.jpg)      
+      
+## Подготовка к запуску.    
 Уставновить [Python 3+](https://www.python.org/downloads/)    
 
 Установить, создать и активировать виртуальное окружение.
@@ -20,4 +21,7 @@ pip3 install -r requirements.txt
 ```
 python3 manage.py runserver
 ```
-
+## Добавление мест с помощью кода
+```
+python3 manage.py load_places
+```

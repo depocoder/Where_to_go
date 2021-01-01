@@ -24,5 +24,8 @@ python3 manage.py runserver
 ```
 ## Добавление мест с помощью кода
 ```
-python3 manage.py load_places
+python3 manage.py load_place http://адрес/файла.json
 ```
+[Данные которые можете загрузить](https://github.com/devmanorg/where-to-go-places).    
+     
+Тестовые данные взяты с сайта [KudaGo](https://kudago.com).

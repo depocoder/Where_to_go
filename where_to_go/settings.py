@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = "sfjsldfhl:;?*213HASJKDHDKJAgJWEDKJASKLDWLHRhehkleh223!&*^&*#~"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -30,7 +30,7 @@ DEBUG = os.getenv("DEBUG")
 
 
 ALLOWED_HOSTS = [
-    '.example.com',  
+    '.example.com',
     '.example.com.',
 ]
 
@@ -63,7 +63,7 @@ MIDDLEWARE = [
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
-SECURE_HSTS_SECONDS = 60 
+SECURE_HSTS_SECONDS = 60
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_CONTENT_TYPE_NOSNIFF = True

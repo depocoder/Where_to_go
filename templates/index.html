@@ -41,26 +41,7 @@
   <script id="places-geojson" type="application/json">
     {
       "type": "FeatureCollection",
-      "features": [
-        {% for place in places %}
-          {
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [{{place.lon}}, {{place.lat}}]
-            },
-            "properties": {
-              "title": "{{place.title}}",
-              "placeId": "{{place.id}}",
-              "detailsUrl": "place/{{place.id}}"
-            }
-        {% if places.last == place %}
-          }
-        {% else %}
-          },
-        {% endif %}
-        {% endfor %}
-      ]
+      "features": {{places | safe}}
     }
   </script>
 

@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render
 from places.models import Place
 from django.http import HttpResponseNotFound, JsonResponse
@@ -5,8 +7,26 @@ from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
 
 def index(request):
+    places = []
+    for place in Place.objects.all():
+        places.append({
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [place.lon, place.lat]
+            },
+            "properties": {
+                "title": place.title,
+                "placeId": place.id,
+                "detailsUrl": f"place/{place.id}"
+            }
+        })
     return render(
-        request, "index.html", context={'places': Place.objects.all()})
+        request,
+        "index.html",
+        context={
+            'places': json.dumps(places)
+        })
 
 
 def show_place(request, place_id):

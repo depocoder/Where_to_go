@@ -19,7 +19,17 @@ source env/bin/activate
 ```
 pip3 install -r requirements.txt  
 ``` 
-    
+     
+## Переменные окружения     
+Создайте файл ".env" в него надо прописать ваши настройки    
+`DEBUG` - режим отладки      
+`SECRET_KEY` - секретный ключ    
+     
+Пример .env файла    
+```
+SECRET_KEY=sdkfhsdklfdsJHFdlskhflkASH121Jk@2323dlasjdSKLAjls2323dlasjdSKLAjlssdkfhsdklfdsJHFdlskhflkASH121Jk
+DEBUG=false
+```
 ## Запуск кода  
 ```
 python3 manage.py runserver

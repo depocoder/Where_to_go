@@ -6,7 +6,7 @@
       
 ![](https://i.imgur.com/x3nt2d6.jpg)      
       
-## Подготовка к запуску.    
+## Подготовка к запуску    
 Уставновить [Python 3+](https://www.python.org/downloads/)    
 
 Установить, создать и активировать виртуальное окружение.
@@ -20,7 +20,7 @@ source env/bin/activate
 pip3 install -r requirements.txt  
 ``` 
     
-## Запуск кода.  
+## Запуск кода  
 ```
 python3 manage.py runserver
 ```
@@ -28,6 +28,6 @@ python3 manage.py runserver
 ```
 python3 manage.py load_place http://адрес/файла.json
 ```
-[Данные которые можете загрузить](https://github.com/devmanorg/where-to-go-places).    
+[Данные, которые можете загрузить](https://github.com/devmanorg/where-to-go-places).    
      
 Тестовые данные взяты с сайта [KudaGo](https://kudago.com).

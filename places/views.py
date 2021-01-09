@@ -25,7 +25,10 @@ def index(request):
         request,
         "index.html",
         context={
-            'places': json.dumps(places)
+            'places': {
+                    "type": "FeatureCollection",
+                    "features": places
+                    }
         })
 
 

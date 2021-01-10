@@ -41,8 +41,8 @@ def show_place(request, place_id):
     place = {
         'title': requested_place.title,
         'imgs': images,
-        "description_short": requested_place.description_short,
-        "description_long": requested_place.description_long,
+        "description_short": requested_place.short_description,
+        "description_long": requested_place.long_description,
         'coordinates': {
           "lat": requested_place.lat,
           "lng": requested_place.lon

@@ -19,7 +19,7 @@ class Image(models.Model):
     image = models.ImageField('Изображение', upload_to='')
     place = models.ForeignKey(
         'Place', related_name='place_image', on_delete=models.CASCADE)
-    position = models.PositiveIntegerField('Позиция', default=0, blank=False, null=False)
+    position = models.PositiveIntegerField('Позиция', default=0)
 
     @property
     def image_preview(self):

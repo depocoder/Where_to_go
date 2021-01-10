@@ -5,8 +5,8 @@ from adminsortable2.admin import SortableInlineAdminMixin
 
 class ImagePlace(SortableInlineAdminMixin, admin.TabularInline):
     model = Image
-    readonly_fields = ('image_preview',)
-    fields = ('image', 'image_preview', 'position')
+    readonly_fields = ['image_preview', ]
+    fields = ['image', 'image_preview', 'position']
 
     def image_preview(self, obj):
         return obj.image_preview
@@ -15,6 +15,6 @@ class ImagePlace(SortableInlineAdminMixin, admin.TabularInline):
 @admin.register(Place)
 class AdminPlace(admin.ModelAdmin):
     search_fields = ['title', ]
-    inlines = (
+    inlines = [
         ImagePlace,
-    )
+    ]

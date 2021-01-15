@@ -16,6 +16,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         json_url = kwargs['json_url']
         response = requests.get(json_url)
+        response.raise_for_status()
         place = response.json()
         place_obj, created = Place.objects.get_or_create(
             title=place['title'],
@@ -30,6 +31,7 @@ class Command(BaseCommand):
                 place=place_obj,
             )
             image_response = requests.get(image_url)
+            image_response.raise_for_status()
             image_content = ContentFile(image_response.content)
             disassembled_url = urlparse(image_url)
             filename, file_ext = os.path.splitext(

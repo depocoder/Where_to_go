@@ -1,5 +1,3 @@
-import json
-
 from django.shortcuts import render
 from places.models import Place
 from django.http import HttpResponseNotFound, JsonResponse
@@ -37,7 +35,7 @@ def show_place(request, place_id):
         requested_place = Place.objects.get(id=place_id)
     except (MultipleObjectsReturned, ObjectDoesNotExist):
         return HttpResponseNotFound('<h1>Такой место не найден</h1>')
-    images = [image.image.url for image in requested_place.place_image.all()]
+    images = [image.image.url for image in requested_place.image.all()]
     place = {
         'title': requested_place.title,
         'imgs': images,

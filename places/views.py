@@ -2,6 +2,7 @@ from django.shortcuts import render
 from places.models import Place
 from django.http import HttpResponseNotFound, JsonResponse
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
+from django.shortcuts import get_object_or_404
 
 
 def index(request):
@@ -31,10 +32,7 @@ def index(request):
 
 
 def show_place(request, place_id):
-    try:
-        requested_place = Place.objects.get(id=place_id)
-    except (MultipleObjectsReturned, ObjectDoesNotExist):
-        return HttpResponseNotFound('<h1>Такой место не найден</h1>')
+    requested_place = get_object_or_404(Place, id=place_id)
     images = [image.image.url for image in requested_place.image.all()]
     place = {
         'title': requested_place.title,

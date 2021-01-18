@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.safestring import mark_safe
 from tinymce.models import HTMLField
+from django.utils.html import format_html
 
 
 class Place(models.Model):
@@ -24,9 +25,10 @@ class Image(models.Model):
     @property
     def image_preview(self):
         if self.image:
-            return mark_safe('<img src="{url}" style="max-height:300px; width:auto">'.format(
-                url=self.image.url,
-                ))
+            return format_html(
+                mark_safe('<img src="{}" style="max-height:300px; width:auto">'),
+                self.image.url,
+                )
         return ""
 
     class Meta(object):

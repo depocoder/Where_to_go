@@ -3,6 +3,7 @@ from places.models import Place
 from django.http import HttpResponseNotFound, JsonResponse
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 
 
 def index(request):
@@ -17,7 +18,7 @@ def index(request):
             "properties": {
                 "title": place.title,
                 "placeId": place.id,
-                "detailsUrl": f"place/{place.id}"
+                "detailsUrl": reverse('place', args=[place.id])
             }
         })
     return render(

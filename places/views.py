@@ -34,7 +34,7 @@ def index(request):
 
 def show_place(request, place_id):
     requested_place = get_object_or_404(Place, id=place_id)
-    images = [image.image.url for image in requested_place.image.all()]
+    images = [image.image.url for image in requested_place.images.all()]
     place = {
         'title': requested_place.title,
         'imgs': images,

@@ -24,11 +24,13 @@ pip3 install -r requirements.txt
 Создайте файл ".env" в него надо прописать ваши настройки    
 `DEBUG` - режим отладки      
 `SECRET_KEY` - секретный ключ    
+`ALLOWED_HOSTS` - Список хостов/доменов, для которых может работать текущий сайт.    
      
 Пример .env файла    
 ```
 SECRET_KEY=sdkfhsdklfdsJHFdlskhflkASH121Jk@2323dlasjdSKLAjls2323dlasjdSKLAjlssdkfhsdklfdsJHFdlskhflkASH121Jk
 DEBUG=false
+ALLOWED_HOSTS=webargs,konch,ped
 ```
 ## Запуск кода  
 ```

@@ -7,9 +7,10 @@ from django.urls import reverse
 
 
 def index(request):
-    places = []
-    for place in Place.objects.all():
-        places.append({
+    places_serialized = []
+    places = Place.objects.all()
+    for place in places:
+        places_serialized.append({
             "type": "Feature",
             "geometry": {
                 "type": "Point",
@@ -27,7 +28,7 @@ def index(request):
         context={
             'places': {
                     "type": "FeatureCollection",
-                    "features": places
+                    "features": places_serialized
                     }
         })
 

@@ -17,20 +17,20 @@ class Command(BaseCommand):
         json_url = kwargs['json_url']
         response = requests.get(json_url)
         response.raise_for_status()
-        place = response.json()
-        place_obj, created = Place.objects.get_or_create(
-            title=place['title'],
+        place_raw = response.json()
+        place, created = Place.objects.get_or_create(
+            title=place_raw['title'],
             
             defaults={
-                "short_description": place['description_short'],
-                "long_description": place['description_long'],
-                "lat": place['coordinates']['lat'],
-                "lon": place['coordinates']['lng'],},
+                "short_description": place_raw['description_short'],
+                "long_description": place_raw['description_long'],
+                "lat": place_raw['coordinates']['lat'],
+                "lon": place_raw['coordinates']['lng'],},
         )
 
-        for index, image_url in enumerate(place['imgs']):
+        for index, image_url in enumerate(place_raw['imgs']):
             image_obj = Image.objects.create(
-                place=place_obj,
+                place=place,
             )
             image_response = requests.get(image_url)
             image_response.raise_for_status()
@@ -39,4 +39,4 @@ class Command(BaseCommand):
             filename, file_ext = os.path.splitext(
                 os.path.basename(disassembled_url.path))
             image_obj.image.save(
-                f'{place_obj.pk}-{index}.jpg', image_content, save=True)
+                f'{place.pk}-{index}.jpg', image_content, save=True)

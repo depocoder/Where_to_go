@@ -33,8 +33,6 @@ DEBUG = env.bool("DEBUG", False)
 
 
 ALLOWED_HOSTS = [
-    '.example.com',
-    '.example.com.',
 ]
 
 
